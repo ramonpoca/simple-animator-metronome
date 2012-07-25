@@ -10,3 +10,4 @@ It has:
 * Metronome, allowing to set you a pace in beats-per-minute, or every n-frames. You can also set a number of sub-beats, or tap a rythm and get the rate.
 * Chronograph, to act out and get a time-sheet of your actions.
 
+See it at http://ramonpoca.github.com/simple-animator-metronome/
