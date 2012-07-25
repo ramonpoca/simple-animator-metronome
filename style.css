@@ -1,0 +1,14 @@
+          body {
+            font-family: Helvetica, Verdana, Arial, sans-serif;
+            font-size: 12px;
+          }
+          #chronotext{
+               background-color: #D6BFFF; 
+          }
+          select {
+                border: thin #A9B300;
+          }
+          #main {
+             border-radius: 4% 4% 4% 4%;
+             padding:3px;
+          }

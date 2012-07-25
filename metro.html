@@ -1,93 +1,121 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
 <html>
 <head>
-<meta name="generator" content=
-"HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 15.6), see www.w3.org">
-
-<style type="text/css">
-          body {
-            font-family: Helvetica, Verdana, Arial, sans-serif;
-            font-size: 12px;
-          }
-          #chronotext{
-               background-color: #D6BFFF; 
-          }
-          select {
-                border: thin #A9B300;
-          }
-          #main {
-             border-radius: 4% 4% 4% 4%;
-             padding:3px;
-          }
-</style>
-
-<script src="metro.js" type="text/javascript"></script>
+  <meta name="generator" content=
+  "HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 15.6), see www.w3.org"/> 
+  <script src="metro.js" type="text/javascript"></script>
+<link rel="stylesheet" href="style.css" type="text/css" media="screen" charset="utf-8">
 <title>Metronome and animator calculator</title>
 </head>
-<body>
-<div id="main">
-<div id="frameselector">
-Frames/second:&nbsp;
-<select id="fps" name="fps" onchange="changedSelect();updateConversion();">
-  <option value="25">PAL (25)</option>
-  <option value="29.97">NTSC (29.97)</option>
-  <option value="24">Cinema (24)</option>
-  <option value="12">Twos (12)</option>
-  <option value="8">Threes (8)</option>
-  <option value="custom">Custom...</option>
-</select>&nbsp;<input type="text" size="4" disabled="true" id=
-"customfps" name="customfps" style="visibility: hidden;" value=""
-onkeyup="updateAll();">
-</div>
-<div id="calculator">
-<h1>Calculator</h1>
-<input type="text" onkeyup="updateFramesToSecs();" size="4"
-id="frames" name="frames" value=
-"">&nbsp;frames&nbsp;=&nbsp;&nbsp;<input type="text" onkeyup=
-"updateSecsToFrames();" size="8" id="seconds" name="seconds" value=
-"">&nbsp;tc or secs
-</div>
-<div>
-  <h1>Metronome</h1>
-  <div>
-  For&nbsp;<input type="text" size="4" name="bpm" id="bpm"
-value="120" onkeyup=
-"updateBeats();"> BPM,&nbsp;beat&nbsp;every&nbsp; <input type="text"
-size="4" onkeyup="updateFPB();" id="framesperbeat" value=
-"">&nbsp;frames
-  </div>
-  <div>
-  <input type="button" id="play" value="Play" onclick="playBeats();">
-  <a href="#" onclick="lessBeats();">-</a> <span id="cellBox"></span>
-  <a href="#" onclick="moreBeats();">+</a> 
-  <input type="button" value="Tap twice" onclick="calculateBPM();">
-  </div>
-  <div>
-  <select id="presetBPM" onchange="setPresetBPM();">
-    <option value="-">--- Preset beats</option>
-    <option value="120">Standard Walk (12 beat)</option>
-    <option value="180">Toon Walk (8 beat)</option>
-    <option value="360">Very Fast run (4 beat)</option>
-    <option value="240">Run or fast walk (6 beat)</option>
-    <option value="90">Strolling walk (16 beat)</option>
-    <option value="72">Tired/old (20 beat)</option>
-    <option value="60">Slow step (24 beat)</option>
-  </select>
-  </div>
-<div id="chrono">
-<h1>Chronometer</h1>
-<input type="button" id="chrono" value="Start" onclick="clickChrono();">&nbsp;
-<input id="stopchrono" type="button" value="Reset" onclick="stopChrono();">&nbsp;
 
-<span id="chronotext">&nbsp;00:00.00 (0 frames)&nbsp;</span>&nbsp;<br>
-<div id="chronolap"></div>
-</div>
-</div>
-<script type="text/javascript">
-                        updateConversion();
+<body>
+  <div id="main">
+    <div id="frameselector">
+      Frames/second:&nbsp; <select id="fps" name="fps" onchange=
+      "changedSelect();updateConversion();">
+        <option value="25">
+          PAL (25)
+        </option>
+
+        <option value="29.97">
+          NTSC (29.97)
+        </option>
+
+        <option value="24">
+          Cinema (24)
+        </option>
+
+        <option value="12">
+          Twos (12)
+        </option>
+
+        <option value="8">
+          Threes (8)
+        </option>
+
+        <option value="custom">
+          Custom...
+        </option>
+      </select>&nbsp;<input type="text" size="4" disabled="true" id="customfps"
+      name="customfps" style="visibility: hidden;" value="" onkeyup=
+      "updateAll();">
+    </div>
+
+    <div id="calculator">
+      <h1>Calculator</h1><input type="text" onkeyup="updateFramesToSecs();"
+      size="4" id="frames" name="frames" value=
+      "">&nbsp;frames&nbsp;=&nbsp;&nbsp;<input type="text" onkeyup=
+      "updateSecsToFrames();" size="8" id="seconds" name="seconds" value=
+      "">&nbsp;tc or secs
+    </div>
+
+    <div>
+      <h1>Metronome</h1>
+
+      <div>
+        For&nbsp;<input type="text" size="4" name="bpm" id="bpm" value="120"
+        onkeyup="updateBeats();"> BPM,&nbsp;beat&nbsp;every&nbsp; <input type=
+        "text" size="4" onkeyup="updateFPB();" id="framesperbeat" value=
+        "">&nbsp;frames
+      </div>
+
+      <div>
+        <input type="button" id="play" value="Play" onclick="playBeats();">
+        <a href="#" onclick="lessBeats();">-</a> <span id="cellBox"></span>
+        <a href="#" onclick="moreBeats();">+</a> <input type="button" value=
+        "Tap twice" onclick="calculateBPM();">
+      </div>
+
+      <div>
+        <select id="presetBPM" onchange="setPresetBPM();">
+          <option value="-">
+            --- Preset beats
+          </option>
+
+          <option value="120">
+            Standard Walk (12 beat)
+          </option>
+
+          <option value="180">
+            Toon Walk (8 beat)
+          </option>
+
+          <option value="360">
+            Very Fast run (4 beat)
+          </option>
+
+          <option value="240">
+            Run or fast walk (6 beat)
+          </option>
+
+          <option value="90">
+            Strolling walk (16 beat)
+          </option>
+
+          <option value="72">
+            Tired/old (20 beat)
+          </option>
+
+          <option value="60">
+            Slow step (24 beat)
+          </option>
+        </select>
+      </div>
+
+      <div id="chronodiv">
+        <h1>Chronometer</h1><input type="button" id="chrono" value="Start"
+        onclick="clickChrono();">&nbsp; <input id="stopchrono" type="button"
+        value="Reset" onclick="stopChrono();">&nbsp; <span id=
+        "chronotext">&nbsp;00:00.00 (0 frames)&nbsp;</span>&nbsp;<br>
+
+        <div id="chronolap"></div>
+      </div>
+    </div><script type="text/javascript">
+                updateConversion();
                         updateBeats();
                         printCells();
                         setBeat(0);
-</script>
+    </script>
+  </div>
 </body>
 </html>
