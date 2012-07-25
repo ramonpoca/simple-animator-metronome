@@ -1,23 +1,30 @@
-          body {
-            font-family: Helvetica, Verdana, Arial, sans-serif;
-            font-size: 12px;
-          }
+body {
+  font-family: Helvetica, Verdana, Arial, sans-serif;
+  font-size: 12px;
+}
 
-          #frameselector {
-            font-size: 1.5em;
-          }
+#frameselector {
+  font-size: 1.5em;
+}
 
-          .box {
-            border: solid 1px #000000;
-            float:left;
-            padding: 1em;
-            margin: 1em;
-          }
+.box {
+  border: solid 1px #000000;
+  float:left;
+  padding: 1em;
+  margin: 1em;
+}
 
-          #chronotext{
-               background-color: #D6BFFF; 
-          }
-          select {
-                border: thin #A9B300;
-          }
+#chronotext{
+   background-color: #D6BFFF; 
+}
+select {
+  border: thin #A9B300;
+}
+.ccell {
+  border: solid #200070;
+  height: 1em;
+  width: 1em;
+}
+
+
           
