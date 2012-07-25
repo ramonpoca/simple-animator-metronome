@@ -1,7 +1,7 @@
 simple-animator-metronome
 =========================
 
-A simple, HTML based, animator metronome. A little tool I did as a iGoogle widget (now dead) but that can work as a standalone page.
+A simple, HTML based, animator metronome. A little tool I did as a iGoogle widget (now dead) but able to work as a standalone page.
 
 It has:
 
