@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<!DOCTYPE html>
 <html>
 <head>
   <meta name="generator" content=
@@ -11,7 +11,7 @@
 <body>
   <div id="main">
     <div id="frameselector">
-      Frames/second:&nbsp; <select id="fps" name="fps" onchange=
+      How many frames per second are you shooting at:&nbsp; <select id="fps" name="fps" onchange=
       "changedSelect();updateConversion();">
         <option value="25">
           PAL (25)
@@ -40,33 +40,20 @@
       name="customfps" style="visibility: hidden;" value="" onkeyup=
       "updateAll();">
     </div>
-
-    <div id="calculator">
-      <h1>Calculator</h1><input type="text" onkeyup="updateFramesToSecs();"
-      size="4" id="frames" name="frames" value=
-      "">&nbsp;frames&nbsp;=&nbsp;&nbsp;<input type="text" onkeyup=
+  <header>
+    <div class="box" id="calculatordiv">
+      <h1>Calculator</h1>
+      <h2>Convert frames to timecode and back</h2>
+      
+      <input type="text" onkeyup="updateFramesToSecs();" size="4" id="frames" name="frames" value= "">&nbsp;frames&nbsp;=&nbsp;&nbsp;<input type="text" onkeyup=
       "updateSecsToFrames();" size="8" id="seconds" name="seconds" value=
       "">&nbsp;tc or secs
     </div>
-
-    <div>
+    <div class="box" id="metronomediv">
       <h1>Metronome</h1>
-
+      <h2>Set a rythm and play it</h2>
       <div>
-        For&nbsp;<input type="text" size="4" name="bpm" id="bpm" value="120"
-        onkeyup="updateBeats();"> BPM,&nbsp;beat&nbsp;every&nbsp; <input type=
-        "text" size="4" onkeyup="updateFPB();" id="framesperbeat" value=
-        "">&nbsp;frames
-      </div>
-
-      <div>
-        <input type="button" id="play" value="Play" onclick="playBeats();">
-        <a href="#" onclick="lessBeats();">-</a> <span id="cellBox"></span>
-        <a href="#" onclick="moreBeats();">+</a> <input type="button" value=
-        "Tap twice" onclick="calculateBPM();">
-      </div>
-
-      <div>
+        <label for="presetBPM">Use a typical rythm</label>
         <select id="presetBPM" onchange="setPresetBPM();">
           <option value="-">
             --- Preset beats
@@ -101,21 +88,37 @@
           </option>
         </select>
       </div>
-
-      <div id="chronodiv">
-        <h1>Chronometer</h1><input type="button" id="chrono" value="Start"
-        onclick="clickChrono();">&nbsp; <input id="stopchrono" type="button"
-        value="Reset" onclick="stopChrono();">&nbsp; <span id=
-        "chronotext">&nbsp;00:00.00 (0 frames)&nbsp;</span>&nbsp;<br>
-
-        <div id="chronolap"></div>
+      <div>
+        Or set one: <input type="text" size="4" name="bpm" id="bpm" value="120"
+        onkeyup="updateBeats();"> beats per minute<br/>
+        Or a beat&nbsp;every&nbsp; <input type=
+        "text" size="4" onkeyup="updateFPB();" id="framesperbeat" value=
+        "">&nbsp;frames
       </div>
-    </div><script type="text/javascript">
-                updateConversion();
-                        updateBeats();
-                        printCells();
-                        setBeat(0);
-    </script>
+      <div>
+        <input type="button" id="play" value="Play" onclick="playBeats();">
+        <a href="#" onclick="lessBeats();">-</a> <span id="cellBox"></span>
+        <a href="#" onclick="moreBeats();">+</a> <input type="button" value=
+        "Tap twice" onclick="calculateBPM();">
+      </div>
+
+    </div>
+    <div class="box" id="chronodiv">
+      <h1>Chrono</h1>
+      <h2>Time your animation and get frame-based timings</h2>
+      <input type="button" id="chrono" value="Start"
+      onclick="clickChrono();">&nbsp; <input id="stopchrono" type="button"
+      value="Reset" onclick="stopChrono();">&nbsp; <span id=
+      "chronotext">&nbsp;00:00.00 (0 frames)&nbsp;</span>&nbsp;<br>
+
+      <div id="chronolap">Lap times</div>
+    </div>
   </div>
+  <script type="text/javascript">
+    updateConversion();
+    updateBeats();
+    printCells();
+    setBeat(0);
+  </script>
 </body>
 </html>
