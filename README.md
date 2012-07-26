@@ -11,3 +11,6 @@ It has:
 * Chronograph, to act out and get a time-sheet of your actions.
 
 See it at http://ramonpoca.github.com/simple-animator-metronome/
+
+
+Disclaimer: this is old code from the web-1.0 era, when things were simpler and men grew big mustaches.
