@@ -17,12 +17,11 @@
  */
 
 var currentBeat = 0;
-var isPlaying = 0;
-var lastBeat = -1;
+var isPlaying = false;
+var isChronoRunning = false;
+var lastBeat = -1;   // Beat time (ms)
+var lastChrono = -1; // Chrono time (ms)
 var MAXLAPSE = 5000; // Maximum milliseconds between taps
-
-var isChronoRunning = false; // 0 stopped 1 running
-var lastChrono = -1; // Chrono counter
 
 var numCells = 4;
 
@@ -58,12 +57,12 @@ function playBeats() {
     var cb = document.getElementById("play");
     if (isPlaying) {
         cb.value = "Play";
-        isPlaying = 0;
+        isPlaying = false;
         currentBeat = 0;
         setBeat(0);
     } else {
         cb.value = "Stop";
-        isPlaying = 1;
+        isPlaying = true;
         setTimeout('updateBeat();', repeat);
     }
 }
